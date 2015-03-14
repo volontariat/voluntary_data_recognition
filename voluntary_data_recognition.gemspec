@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
   s.version     = VoluntaryDataRecognition::VERSION
   s.authors     = ['Mathias Gawlista']
   s.email       = ['gawlista@gmail.com']
-  s.homepage    = 'TODO'
+  s.homepage    = 'http://Volontari.at'
   s.summary     = 'DRAFT: plugin for crowdsourcing management system voluntary about recognition if data like an image contais an object or feature.'
   s.description = 'DRAFT: plugin for crowdsourcing management system voluntary about recognition if data like an image contais an object or feature.'
   s.license     = 'MIT'
