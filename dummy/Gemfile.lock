@@ -1,4 +1,13 @@
 GIT
+  remote: git://github.com/vigetlabs/acts_as_markup.git
+  revision: d654f61ad06a2dba5fca5c7a84615654d8ae583e
+  specs:
+    acts_as_markup (2.0.2)
+      activerecord (>= 3.0.20)
+      activesupport (>= 3.0.20)
+      rdiscount
+
+GIT
   remote: git://github.com/volontariat/voluntary-ember_js.git
   revision: cdc4cc7d2d76676aac7e650b2ab2310064d764a3
   specs:
@@ -9,8 +18,31 @@ GIT
       voluntary (~> 0.5)
 
 GIT
-  remote: git://github.com/volontariat/voluntary.git
-  revision: c0c71dba24234827ed7ae49e3270c4ba5928b238
+  remote: git://github.com/volontariat/voluntary_survey.git
+  revision: d6b21e9bb229bfef7e61608d38204e7cfb0d5164
+  specs:
+    voluntary_survey (0.1.1)
+      voluntary (~> 0.6)
+      voluntary-ember_js (~> 0.1.0)
+
+GIT
+  remote: https://github.com/binarylogic/settingslogic.git
+  revision: 0ae134bc6b93463bb0bc406e5b0df82ed07fc53f
+  specs:
+    settingslogic (2.0.9)
+
+GIT
+  remote: https://github.com/pivotal/jasmine-gem.git
+  revision: 293cb072d2f19b1534a6472a1a8c6844ffb575ae
+  specs:
+    jasmine (2.3.1)
+      jasmine-core (~> 2.3)
+      phantomjs
+      rack (>= 1.2.1)
+      rake
+
+PATH
+  remote: ../../voluntary
   specs:
     voluntary (0.7.0)
       active_model_serializers (~> 0.9.3)
@@ -81,23 +113,15 @@ GIT
       will_paginate_mongoid (~> 2.0.1)
       zip-zip (~> 0.2)
 
-GIT
-  remote: git://github.com/volontariat/voluntary_survey.git
-  revision: d6b21e9bb229bfef7e61608d38204e7cfb0d5164
-  specs:
-    voluntary_survey (0.1.1)
-      voluntary (~> 0.6)
-      voluntary-ember_js (~> 0.1.0)
-
 PATH
-  remote: .
+  remote: /Users/gawlim/workspace/voluntary/voluntary_data_recognition
   specs:
     voluntary_data_recognition (0.0.1)
       voluntary (~> 0.7)
       voluntary_survey (~> 0.1)
 
 GEM
-  remote: https://rubygems.org/
+  remote: http://rubygems.org/
   specs:
     actionmailer (4.2.4)
       actionpack (= 4.2.4)
@@ -168,6 +192,8 @@ GEM
       sass-rails (>= 3.2.0)
     bson (3.2.6)
     builder (3.2.2)
+    byebug (4.0.5)
+      columnize (= 0.9.0)
     cancan (1.6.10)
     capybara (2.4.4)
       mime-types (>= 1.16)
@@ -180,6 +206,9 @@ GEM
       json
     childprocess (0.5.7)
       ffi (~> 1.0, >= 1.0.11)
+    codeclimate-test-reporter (0.4.8)
+      simplecov (>= 0.7.1, < 1.0.0)
+    coderay (1.1.0)
     coffee-rails (4.1.0)
       coffee-script (>= 2.2.0)
       railties (>= 4.0.0, < 5.0)
@@ -187,11 +216,14 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.9.1.1)
+    columnize (0.9.0)
     connection_pool (2.2.0)
     countries (0.9.3)
       currencies (~> 0.4.2)
     country_select (1.3.1)
       countries (= 0.9.3)
+    crack (0.4.2)
+      safe_yaml (~> 1.0.0)
     cucumber (1.3.20)
       builder (>= 2.1.2)
       diff-lcs (>= 1.1.3)
@@ -207,6 +239,7 @@ GEM
     cucumber-rails-training-wheels (1.0.0)
       cucumber-rails (>= 1.1.1)
     currencies (0.4.2)
+    daemons (1.2.3)
     database_cleaner (0.7.2)
     devise (3.4.1)
       bcrypt (~> 3.0)
@@ -238,6 +271,7 @@ GEM
     ethon (0.5.12)
       ffi (>= 1.3.0)
       mime-types (~> 1.18)
+    eventmachine (1.0.8)
     execjs (2.6.0)
     facebox-rails (0.2.0)
       railties (>= 3.0, < 5.0)
@@ -294,6 +328,7 @@ GEM
       actionpack (>= 3.0.0)
       i18n-inflector (~> 2.6)
       railties (>= 3.0.0)
+    jasmine-core (2.3.4)
     jquery-rails (3.1.4)
       railties (>= 3.0, < 5.0)
       thor (>= 0.14, < 2.0)
@@ -310,14 +345,18 @@ GEM
       addressable (~> 2.3)
     letter_opener (1.0.0)
       launchy (>= 2.0.4)
+    libv8 (3.16.14.13)
     libwebsocket (0.1.8)
       addressable
       websocket
+    linecache (0.46)
+      rbx-require-relative (> 0.0.4)
     loofah (2.0.3)
       nokogiri (>= 1.5.9)
     mail (2.6.3)
       mime-types (>= 1.16, < 3)
     messagebus_ruby_api (1.0.11)
+    method_source (0.8.2)
     mime-types (1.25.1)
     mini_portile (0.6.2)
     minitest (5.8.2)
@@ -345,6 +384,7 @@ GEM
     multi_test (0.1.2)
     multi_xml (0.5.5)
     multipart-post (2.0.0)
+    mysql2 (0.3.20)
     netrc (0.11.0)
     nokogiri (1.6.6.2)
       mini_portile (~> 0.6.0)
@@ -385,10 +425,21 @@ GEM
       activerecord (>= 3.0, < 5.0)
       activesupport (>= 3.0, < 5.0)
     pg (0.17.1)
-    power_assert (0.2.4)
+    phantomjs (1.9.8.0)
+    power_assert (0.2.5)
     protected_attributes (1.0.9)
       activemodel (>= 4.0.1, < 5.0)
+    pry (0.10.3)
+      coderay (~> 1.1.0)
+      method_source (~> 0.8.1)
+      slop (~> 3.4)
+    pry-byebug (3.1.0)
+      byebug (~> 4.0)
+      pry (~> 0.10)
     rack (1.6.4)
+    rack-cors (0.2.9)
+    rack-protection (1.5.3)
+      rack
     rack-test (0.6.3)
       rack (>= 1.0)
     rails (4.2.4)
@@ -421,7 +472,11 @@ GEM
       rake (>= 0.8.7)
       thor (>= 0.18.1, < 2.0)
     rake (10.4.2)
+    rbx-require-relative (0.0.9)
+    rdiscount (2.1.8)
+    recaptcha (0.4.0)
     redcarpet (3.2.3)
+    ref (2.0.0)
     remotipart (1.2.1)
     responders (2.1.0)
       railties (>= 4.2.0, < 5)
@@ -447,6 +502,7 @@ GEM
       rspec-support (~> 3.3.0)
     rspec-support (3.3.0)
     rubyzip (1.1.7)
+    safe_yaml (1.0.4)
     sass (3.4.19)
     sass-rails (5.0.4)
       railties (>= 4.0.0, < 5.0)
@@ -469,10 +525,20 @@ GEM
     simple_form (3.1.1)
       actionpack (~> 4.0)
       activemodel (~> 4.0)
+    simplecov (0.7.1)
+      multi_json (~> 1.0)
+      simplecov-html (~> 0.7.1)
+    simplecov-html (0.7.1)
+    sinatra (1.4.6)
+      rack (~> 1.4)
+      rack-protection (~> 1.4)
+      tilt (>= 1.3, < 3)
     slim (2.0.3)
       temple (~> 0.6.6)
       tilt (>= 1.3.3, < 2.1)
+    slop (3.6.0)
     spork (1.0.0rc4)
+    spring (1.4.0)
     sprockets (3.4.0)
       rack (> 1, < 3)
     sprockets-rails (2.3.3)
@@ -484,6 +550,13 @@ GEM
     temple (0.6.10)
     test-unit (3.0.9)
       power_assert
+    therubyracer (0.12.2)
+      libv8 (~> 3.16.14.0)
+      ref
+    thin (1.3.1)
+      daemons (>= 1.0.9)
+      eventmachine (>= 0.12.6)
+      rack (>= 1.0.0)
     thor (0.19.1)
     thread_safe (0.3.5)
     tilt (1.4.1)
@@ -500,6 +573,9 @@ GEM
       yard (~> 0.7)
     warden (1.2.3)
       rack (>= 1.0)
+    webmock (1.8.11)
+      addressable (>= 2.2.7)
+      crack (>= 0.1.7)
     websocket (1.2.2)
     will_paginate (3.0.7)
     will_paginate_mongoid (2.0.1)
@@ -515,25 +591,44 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  acts_as_markup!
+  addressable (~> 2.2)
   awesome_print (~> 1.1.0)
   capybara (~> 2.4.4)
   capybara-webkit (~> 1.6.0)
+  codeclimate-test-reporter
+  cucumber (~> 1.3.18)
+  cucumber-rails (~> 1.4.0)
   cucumber-rails-training-wheels (~> 1.0.0)
   database_cleaner (~> 0.7.1)
   factory_girl_rails (~> 1.7.0)
   fixture_builder (~> 0.3.3)
+  jasmine!
   launchy (~> 2.1.2)
   letter_opener (~> 1.0.0)
+  linecache (= 0.46)
+  mysql2 (~> 0.3.13)
   oink (~> 0.10.1)
+  pry-byebug (~> 3.1.0)
+  rack-cors (~> 0.2.4)
+  recaptcha
   rspec-rails (~> 3.3.3)
   selenium-webdriver (~> 2.22.1)
+  settingslogic!
+  simplecov (~> 0.7.1)
+  sinatra
   spork (~> 1.0rc2)
+  spring
   test-unit (~> 3.0.9)
+  therubyracer (~> 0.12.0)
+  thin (~> 1.3.1)
   timecop (~> 0.6.1)
   voluntary!
   voluntary-ember_js!
   voluntary_data_recognition!
   voluntary_survey!
+  webmock (~> 1.8.11)
+  yard (~> 0.7)
 
 BUNDLED WITH
    1.10.4
